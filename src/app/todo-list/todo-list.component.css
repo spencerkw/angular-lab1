@@ -1,0 +1,50 @@
+ol {
+  margin: 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+.todo-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 40px;
+}
+
+.todo-item-container>* {
+  margin: 0 10px;
+}
+
+button {
+  border-radius: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+
+  cursor: pointer;
+}
+
+.complete-btn {
+  padding: 10px;
+  font-size: 0.75rem;
+  border: 1px solid #ff1493;
+  color: #ff1493;
+}
+
+.task-text {
+  flex: 1;
+
+  font-size: 1.1rem;
+}
+
+.x-btn {
+  padding: 0;
+  border: none;
+  background-color: inherit;
+  height: 24px;
+}
+
+.completed {
+  text-decoration: line-through;
+}

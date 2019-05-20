@@ -39,11 +39,10 @@ export class TodoComponent {
   }
 
   removeTodo(index: number): void {
-    console.log(index);
     this.todoList.splice(index, 1);
   }
 
-  completeTask(index: number): void {
+  completeTodo(index: number): void {
     this.todoList[index].completed = true;
   }
 

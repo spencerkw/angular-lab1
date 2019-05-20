@@ -1,0 +1,9 @@
+<ol>
+  <li class="todo-item" [ngClass]="{'completed': todo.completed}" *ngFor="let todo of todoList; index as i">
+    <div class="todo-item-container">
+      <button class="complete-btn" *ngIf="!todo.completed" (click)="completeTodo(i)">Complete</button>
+      <p class="task-text">{{ todo.task }}</p>
+      <button class="x-btn" (click)="removeTodo(i)"><i class="material-icons">clear</i></button>
+    </div>
+  </li>
+</ol>
