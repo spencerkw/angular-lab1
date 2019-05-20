@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Todo } from '../todo';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css']
 })
-export class TodoComponent implements OnInit {
+export class TodoComponent {
   todoList: Todo[] = [
     {
       task: "Walk the dog",
@@ -28,7 +29,25 @@ export class TodoComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  addTodo(todoForm: NgForm): void {
+    //console.log(todoForm);
+    this.todoList.push({
+      task: todoForm.value.todo,
+      completed: false
+    });
+    todoForm.resetForm();
   }
 
+  removeTodo(index: number): void {
+    console.log(index);
+    this.todoList.splice(index, 1);
+  }
+
+  completeTask(index: number): void {
+    this.todoList[index].completed = true;
+  }
+
+  filterList(event): void {
+    console.log(event.target.value);
+  }
 }
